@@ -1,0 +1,15 @@
+[package]
+name = "pbs"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+prost-types = { version = "0.14.1", default-features = false }
+pbjson-types = { version = "0.8.0", default-features = false, optional = true }
+
+[features]
+default = []
+std = []
+
+serde-json = ["pbjson-types"]
