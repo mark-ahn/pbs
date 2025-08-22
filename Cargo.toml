@@ -1,6 +1,6 @@
 [package]
 name = "pbs"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2024"
 publish = false
 
@@ -11,6 +11,6 @@ prost = { version = "0.14.1", default-features = false, features = ["derive"] }
 
 [features]
 default = []
-std = []
+std = ["prost-types/std"]
 pub-deps = []
 serde-json = ["pbjson-types"]
