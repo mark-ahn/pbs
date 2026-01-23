@@ -1,1 +1,10 @@
 /target
+
+.vscode
+.cargo
+
+protos
+protos-out
+.DS_Store
+
+makefile.pb
