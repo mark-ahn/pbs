@@ -4,7 +4,7 @@ pub mod deps {
     pub use prost;
 }
 
-mod pbs {
+mod more {
     include!(concat!(
         env!("OUT_DIR"),
         "/google/protobuf/google.protobuf.rs"
@@ -23,7 +23,7 @@ pub mod wkt {
     #[cfg(feature = "serde-json")]
     pub use pbjson_types::*;
 
-    pub use super::pbs::Empty;
+    pub use super::more::Empty;
 }
 
 #[cfg(test)]
