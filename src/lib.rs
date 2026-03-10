@@ -4,16 +4,19 @@ pub mod deps {
     pub use prost;
 }
 
-mod more {
-    include!(concat!(
-        env!("OUT_DIR"),
-        "/google/protobuf/google.protobuf.rs"
-    ));
-    #[cfg(feature = "serde-json")]
-    include!(concat!(
-        env!("OUT_DIR"),
-        "/google/protobuf/google.protobuf.serde.rs"
-    ));
+mod google {
+    pub mod protobuf {
+
+        include!(concat!(
+            env!("OUT_DIR"),
+            "/google/protobuf/google.protobuf.rs"
+        ));
+        #[cfg(feature = "serde-json")]
+        include!(concat!(
+            env!("OUT_DIR"),
+            "/google/protobuf/google.protobuf.serde.rs"
+        ));
+    }
 }
 
 pub mod wkt {
@@ -23,7 +26,7 @@ pub mod wkt {
     #[cfg(feature = "serde-json")]
     pub use pbjson_types::*;
 
-    pub use super::more::Empty;
+    pub use super::google::protobuf::Empty;
 }
 
 #[cfg(test)]
