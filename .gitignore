@@ -2,6 +2,7 @@
 
 .vscode
 .cargo
+.zed
 
 protos
 protos-out
